@@ -53,4 +53,6 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     implementation("net.gotev:speech:1.6.2")
     implementation ("com.airbnb.android:lottie:6.0.0")
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
 }

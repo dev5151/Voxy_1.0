@@ -86,6 +86,7 @@ class VoiceFragment : BottomSheetDialogFragment() {
                     binding.micAnim.pauseAnimation()
                     binding.wave.pauseAnimation()
                     binding.micAnim.isClickable = true
+                    findResult()
                 }
             })
         } catch (exc: SpeechRecognitionNotAvailable) {
@@ -100,9 +101,19 @@ class VoiceFragment : BottomSheetDialogFragment() {
             Log.e("speech", "Google voice typing must be enabled!")
         }
     }
-
     override fun dismiss() {
         super.dismiss()
         _binding = null
+    }
+
+    private fun findResult(){
+        binding.wave.visibility = View.GONE
+        binding.micAnim.visibility = View.INVISIBLE
+        binding.shimmerLayout1.visibility = View.VISIBLE
+        binding.shimmerLayout2.visibility = View.VISIBLE
+        binding.shimmerLayout3.visibility = View.VISIBLE
+        binding.shimmerLayout1.startShimmer()
+        binding.shimmerLayout2.startShimmer()
+        binding.shimmerLayout3.startShimmer()
     }
 }

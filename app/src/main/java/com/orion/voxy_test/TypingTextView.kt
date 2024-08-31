@@ -33,7 +33,7 @@ class TypingTextView @JvmOverloads constructor(
         handler.removeCallbacksAndMessages(null)
         currentText = finalText
         text = finalText
-        startCursorBlink()
+        //startCursorBlink()
     }
 
     fun resetText() {

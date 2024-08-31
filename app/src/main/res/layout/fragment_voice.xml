@@ -2,17 +2,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_full_screen"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:tint="@android:color/darker_gray"
+        android:src="@drawable/ic_full_screen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/darker_gray" />
 
     <ImageView
         android:id="@+id/voxy_logo"
@@ -64,16 +65,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wave" />
 
-   <!-- <View
-        android:id="@+id/cursorView"
-        android:layout_width="2dp"
-        android:layout_height="0dp"
-        android:background="@android:color/black"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/recognisedText"
-        app:layout_constraintStart_toEndOf="@+id/recognisedText"
-        app:layout_constraintTop_toTopOf="@+id/recognisedText" />
--->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/recognisedText">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/shimmer_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:gravity="center"
+                tools:text = "asfasdasd"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/shimmer_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <TextView
+            android:id="@+id/final_text_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/shimmer_text_3"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </LinearLayout>
+
+
+    <!-- <View
+         android:id="@+id/cursorView"
+         android:layout_width="2dp"
+         android:layout_height="0dp"
+         android:background="@android:color/black"
+         android:visibility="gone"
+         app:layout_constraintBottom_toBottomOf="@+id/recognisedText"
+         app:layout_constraintStart_toEndOf="@+id/recognisedText"
+         app:layout_constraintTop_toTopOf="@+id/recognisedText" />
+ -->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/wave"
         android:layout_width="0dp"
@@ -91,12 +165,10 @@
         android:id="@+id/mic_anim"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recognisedText"
-        app:layout_constraintVertical_bias="0.513"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/mic_anim" />
